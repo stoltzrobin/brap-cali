@@ -37,15 +37,15 @@ const Separator = styled.hr`
 
 export const Table = () => (
   <Wrapper>
-    {parameters.map((param) => (
-      <>
+    {parameters.map((param, i) => (
+      <React.Fragment key={i}>
         <TableContent>
           <TableColumn>{param.id}</TableColumn>
           <TableColumn>{param.name}</TableColumn>
           <TableInput value={param.value} />
         </TableContent>
         <Separator />
-      </>
+      </React.Fragment>
     ))}
   </Wrapper>
 );
